@@ -5,7 +5,7 @@ require 'sqlite3'
 
 def init_db
 	@db = SQLite3::Database.new 'leprosorium.db'
-	@db.results_as_hash
+	@db.results_as_hash = true
 end
 
 before do
@@ -24,7 +24,8 @@ end
 
 
 get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+	@results = @db.execute 'select * from Posts order by id desc'
+	erb :index
 end
 
 get '/new' do
