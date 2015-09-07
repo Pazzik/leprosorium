@@ -44,3 +44,7 @@ post '/new' do
   	#erb "You typed #{content}"
 end
 
+get '/details/:post_id' do
+	post_id = params[:post_id]
+	erb "#{Post post_id}"
+end
