@@ -1,4 +1,3 @@
-sinatra-bootstrap-clean
-=======================
+Classic learning project - Blog. 
 
-Cleaned version of https://github.com/bootstrap-ruby/sinatra-bootstrap
+Ruby on Sinatra
